@@ -30,6 +30,11 @@ $("#overlay").click(function(){
 $("body").mCustomScrollbar({
 	autoHideScrollbar: false,
 	scrollInertia: 60,
+	contentTouchScroll: true,
+	scrollButtons: {
+	    enable: true
+	},
+	theme: "light",
 	advanced:{
         updateOnContentResize: true,
         updateOnBrowserResize: true

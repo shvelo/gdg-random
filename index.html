@@ -16,21 +16,26 @@
 		font-family: sans-serif;
 	}
 	body {
-		overflow: scroll;
+		overflow-y: scroll;
 	}
 	#teams {
 		margin: 0;
 		padding: 0;
+		list-style: decimal;
+		list-style-position: inside;
 	}
 	#teams li {
-		display: block;
 		text-align: center;
 		line-height: 2;
 		font-size: 3.5em;
 		padding-left: 1em;
 		opacity: 0;
+		color: rgba(255,255,255,0.7);
 		-webkit-transition: 3s;
 		transition: 3s;
+	}
+	#teams li span {
+		color: white;
 	}
 	#teams li.show {
 		opacity: 1;
@@ -39,8 +44,8 @@
 	</style>
 </head>
 <body>
-	<ul id="teams">
-	</ul>
+	<ol id="teams">
+	</ol>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script src="jquery.smooth-scroll.min.js"></script>
 	<script>
@@ -52,7 +57,7 @@
 	var showNext = function() {
 		if(teams.length == 0) return;
 		var next = Math.floor(Math.random() * teams.length);
-		teamList.append('<li id="team' + i + '">' + teams[next] + '</li>');
+		teamList.append('<li id="team' + i + '"><span>' + teams[next] + '</span></li>');
 		teams.splice(next,1);
 		var item = teamList.find("#team" + i);
 		setTimeout(function(){

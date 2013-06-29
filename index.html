@@ -3,6 +3,10 @@
 	<meta charset="utf-8">
 	<title>ecaHack Tbilisi</title>
 	<style>
+	@-webkit-keyframes blur {
+	  from { text-shadow: 0 0 10px white;  }
+	  to   { text-shadow: 0; }
+	}
 	html, body {
 		padding: 0;
 		margin: 0;
@@ -27,6 +31,7 @@
 	}
 	#teams li.show {
 		opacity: 1;
+		-webkit-animation: blur 4s;
 	}
 	</style>
 </head>
@@ -34,10 +39,11 @@
 	<ul id="teams">
 	</ul>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="jquery.smooth-scroll.min.js"></script>
 	<script>
 	var teamList = $("#teams");
 	var teams = [
-	"Team 1", "Team 2", "Team 3", "Team 5", "Team 6", "Team 7", "Team 8", "Team 9", "Team 10"
+	"Hello World 2.0", "LB Dev", "Tourist Guide", "Exception", "TSU State Uni", "Keyword", "ITI", "Young Programmers", "Tous"
 	];
 	var i = 0;
 	var showNext = function() {
@@ -47,7 +53,9 @@
 		teams.splice(next,1);
 		var item = teamList.find("#team" + i);
 		setTimeout(function(){
-			$(window).scrollTop($(window).height());
+			$.smoothScroll({
+				scrollTarget: item
+			});
 			item.addClass("show");  	
 			setTimeout(showNext, 800);
 		}, 10);

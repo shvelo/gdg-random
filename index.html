@@ -4,8 +4,9 @@
 	<title>ecaHack Tbilisi</title>
 	<style>
 	@-webkit-keyframes blur {
-	  from { text-shadow: 0 0 10px white;  }
-	  to   { text-shadow: 0; }
+	  0% { text-shadow: 0; }
+	  50%   { text-shadow: 0 0 10px white; }
+	  100% { text-shadow: 0; }
 	}
 	html, body {
 		padding: 0;
@@ -39,7 +40,7 @@
 	}
 	#teams li.show {
 		opacity: 1;
-		-webkit-animation: blur 4s;
+		-webkit-animation: blur 2s;
 	}
 	</style>
 </head>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>ecaHack Tbilisi</title>
+	<style>
+	html, body {
+		padding: 0;
+		margin: 0;
+		height: 100%;
+		background: #2d2d2d;
+		color: white;
+		font-family: sans-serif;
+	}
+	#teams {
+		margin: 0;
+		padding: 0;
+	}
+	#teams li {
+		display: block;
+		text-align: center;
+		line-height: 2;
+		font-size: 3.5em;
+		padding-left: 1em;
+		opacity: 0;
+		-webkit-transition: 3s;
+		transition: 3s;
+	}
+	#teams li.show {
+		opacity: 1;
+	}
+	</style>
+</head>
+<body>
+	<ul id="teams">
+	</ul>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script>
+	var teamList = $("#teams");
+	var teams = [
+	"Team 1", "Team 2", "Team 3", "Team 5", "Team 6", "Team 7", "Team 8", "Team 9", "Team 10"
+	];
+	var i = 0;
+	var showNext = function() {
+		if(teams.length == 0) return;
+		var next = Math.floor(Math.random() * teams.length);
+		teamList.append('<li id="team' + i + '">' + teams[next] + '</li>');
+		teams.splice(next,1);
+		var item = teamList.find("#team" + i);
+		setTimeout(function(){
+			$(window).scrollTop($(window).height());
+			item.addClass("show");  	
+			setTimeout(showNext, 800);
+		}, 10);
+		i++;
+	}
+	showNext();
+	</script>
+</body>

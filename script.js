@@ -13,7 +13,7 @@ var showNext = function() {
 	var item = teamList.find("#team" + i);
 	setTimeout(function(){
 		item.addClass("show");
-		setTimeout(showNext, 800);
+		setTimeout(showNext, 2000);
 		setTimeout(function(){
 			if(teams.length == 0) clearInterval(interval);
 		}, 3000);

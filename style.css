@@ -1,8 +1,7 @@
-
 @-webkit-keyframes blur {
 	0% { text-shadow: 0; padding-top: 0; opacity: 0; }
 	50%   { text-shadow: 0 0 10px white; }
-	100% { text-shadow: 0; padding-top: 0.3em; opacity: 1; }
+	100% { text-shadow: 0; padding-top: 0.4em; opacity: 1; }
 }
 html, body {
 	padding: 0;
@@ -20,8 +19,8 @@ html, body {
 }
 #teams li {
 	text-align: center;
-	height: 1.5em;
-	padding-top: 0.3em;
+	height: 1em;
+	padding-top: 0.4em;
 	font-size: 3.5em;
 	padding-left: 1em;
 	opacity: 0;
